@@ -5,10 +5,9 @@ import com.selenium.addressbook.model.Groups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.testng.Assert.assertEquals;
+
 
 public class GroupModificationTest extends TestBase {
 
@@ -28,9 +27,8 @@ public class GroupModificationTest extends TestBase {
         GroupData group = new GroupData().withId(modifiedGroup.getId())
                 .withName("NEW1").withHeader("NEW2").withFooter("NEW3");
         app.group().modify(group);
+        assertThat(app.group().count(), equalTo(before.size()));
         Groups after = app.group().all();
-        assertEquals(after.size(), before.size());
-
         assertThat(after, equalTo(before.without(modifiedGroup).withAdded(group)));
     }
 
