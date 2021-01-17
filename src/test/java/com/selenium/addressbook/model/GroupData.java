@@ -38,6 +38,16 @@ public class GroupData {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "GroupData{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", header='" + header + '\'' +
+                ", footer='" + footer + '\'' +
+                '}';
+    }
+
     public GroupData withHeader(String header) {
         this.header = header;
         return this;
@@ -48,13 +58,6 @@ public class GroupData {
         return this;
     }
 
-    @Override
-    public String toString() {
-        return "GroupData{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                '}';
-    }
 
     @Override
     public boolean equals(Object o) {
