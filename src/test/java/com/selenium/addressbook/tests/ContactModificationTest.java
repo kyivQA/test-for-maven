@@ -17,7 +17,7 @@ public class ContactModificationTest extends TestBase {
         }
     }
 
-    @Test(enabled = false)
+    @Test
     public void modifyContact() {
         int before = app.contact().getContactCount();
         app.contact().gotoHome();

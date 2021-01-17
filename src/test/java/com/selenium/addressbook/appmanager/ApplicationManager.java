@@ -40,7 +40,7 @@ public class ApplicationManager {
         sessionHelper = new SessionHelper(driver);
         contactHelper = new ContactHelper(driver);
         sessionHelper.login("admin", "secret");
-        driver.manage().window().setSize(new Dimension(1366, 768));
+        driver.manage().window().setSize(new Dimension(1920, 1080));
     }
 
     public void stop() {
