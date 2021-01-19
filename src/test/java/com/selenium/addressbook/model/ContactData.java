@@ -43,6 +43,10 @@ public class ContactData {
 //        return this;
 //    }
 
+    public String getGroup() {
+        return group;
+    }
+
     public String getFirstname() {
 
         return firstname;
@@ -52,7 +56,6 @@ public class ContactData {
 
         return lastname;
     }
-
 
     public String getEmail() {
 
@@ -77,10 +80,6 @@ public class ContactData {
     public ContactData withGroup(String group) {
         this.group = group;
         return this;
-    }
-
-    public String getGroup() {
-        return group;
     }
 
     public String getMobilePhone() {
@@ -115,7 +114,8 @@ public class ContactData {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContactData that = (ContactData) o;
-        return Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname) && Objects.equals(mobilePhone, that.mobilePhone);
+        return Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname)
+                && Objects.equals(mobilePhone, that.mobilePhone);
     }
 
     @Override
@@ -128,7 +128,8 @@ public class ContactData {
         return "ContactData{" +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", phoneMobile='" + mobilePhone + '\'' +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 

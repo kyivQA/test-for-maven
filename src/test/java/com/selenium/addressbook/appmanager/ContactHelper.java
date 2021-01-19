@@ -31,7 +31,8 @@ public class ContactHelper extends HelperBase {
         attach(By.name("photo"), contactData.getPhoto());
 
         if (creation) {
-            new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+            new Select(driver.findElement(By.name("new_group")))
+                    .selectByVisibleText(contactData.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -40,6 +41,11 @@ public class ContactHelper extends HelperBase {
     public void submitContactCreation() {
 
         click(By.name("submit"));
+    }
+
+    public void create(ContactData contact) {
+        fillContactForm(contact, true);
+        submitContactCreation();
     }
 
     public void initUpdateData() {
